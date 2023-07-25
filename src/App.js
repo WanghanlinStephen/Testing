@@ -1,7 +1,6 @@
 var React = require('react');
 var createReactClass = require('create-react-class');
 var Button = require('react-bootstrap').Button;
-var Panel = require('react-bootstrap').Panel;
 var ListGroup = require('react-bootstrap').ListGroup;
 var ListGroupItem = require('react-bootstrap').ListGroupItem;
 
@@ -10,34 +9,34 @@ var Dashboard = createReactClass({
         return (
             <div>
                 <h1>Dashboard Name</h1>
-                <Panel>
-                    <Panel.Heading>
-                        <h3>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">
                             Security Recommendation
                             <Button bsStyle="default" className="pull-right">Refresh</Button>
                         </h3>
-                    </Panel.Heading>
-                    <Panel.Body>
+                    </div>
+                    <div className="panel-body">
                         Important metrics go here...
-                    </Panel.Body>
-                </Panel>
+                    </div>
+                </div>
                 <hr/>
-                <Panel>
-                    <Panel.Heading>
-                        <h3>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">
                             IAM Resources
                             <Button bsStyle="default" className="pull-right">Refresh</Button>
                         </h3>
-                    </Panel.Heading>
-                    <Panel.Body>
+                    </div>
+                    <div className="panel-body">
                         <ListGroup>
                             <ListGroupItem>User Groups: 10</ListGroupItem>
                             <ListGroupItem>Users: 20</ListGroupItem>
                             <ListGroupItem>Roles: 30</ListGroupItem>
                             <ListGroupItem>Policies: 40</ListGroupItem>
                         </ListGroup>
-                    </Panel.Body>
-                </Panel>
+                    </div>
+                </div>
                 <hr/>
                 <h2>What's News</h2>
                 <ListGroup>
