@@ -12,10 +12,10 @@ var Dashboard = createReactClass({
                 <h1>Dashboard Name</h1>
                 <Panel>
                     <Panel.Heading>
-                        <Panel.Title componentClass="h3">
+                        <h3>
                             Security Recommendation
                             <Button bsStyle="default" className="pull-right">Refresh</Button>
-                        </Panel.Title>
+                        </h3>
                     </Panel.Heading>
                     <Panel.Body>
                         Important metrics go here...
@@ -24,10 +24,10 @@ var Dashboard = createReactClass({
                 <hr/>
                 <Panel>
                     <Panel.Heading>
-                        <Panel.Title componentClass="h3">
+                        <h3>
                             IAM Resources
                             <Button bsStyle="default" className="pull-right">Refresh</Button>
-                        </Panel.Title>
+                        </h3>
                     </Panel.Heading>
                     <Panel.Body>
                         <ListGroup>
