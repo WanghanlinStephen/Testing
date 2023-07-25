@@ -1,53 +1,89 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
-import { Grid, Row, Col, Badge, Button, Glyphicon, Label } from 'react-bootstrap';
+import SearchIcon from '../assets/search.png';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 
-var Dashboard = createReactClass({
-  render: function() {
-    return (
-      <div className="dashboard">
-        <Grid>
-          <Row className="awsui-util-action-stripe-large">
-            <Col xs={12}>
-              <h1 className="awsui-util-d-ib">IAM dashboard</h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={9}>
-              <div className="panel">
-                <div className="panel-heading">
-                  <h2>Security recommendations <Badge>1</Badge></h2>
-                  <Button bsSize="small"><Glyphicon glyph="refresh" /></Button>
-                </div>
-                <div className="panel-body">
-                  <h4>Add MFA for root user</h4>
-                  <small>Add MFA for root user - Enable multi-factor authentication (MFA) for the root user to improve security for this account.</small>
-                  <Button bsSize="small">Add MFA</Button>
-                </div>
-                <div className="panel-body">
-                  <h4>Root user has no active access keys</h4>
-                  <small>Using access keys attached to an IAM user instead of the root user improves security.</small>
-                </div>
-              </div>
-            </Col>
-            <Col xs={12}>
-              <div className="panel">
-                <div className="panel-heading">
-                  <h2>IAM resources</h2>
-                  <Button bsSize="small"><Glyphicon glyph="refresh" /></Button>
-                </div>
-                <div className="panel-body">
-                  <Label>User groups: </Label> <a href="#/groups">0</a>
-                  <Label>Users: </Label> <a href="#/users">0</a>
-                  <Label>Roles: </Label> <a href="#/roles">0</a>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
-    );
-  }
+const Dashboard = createReactClass({
+    render: function () {
+        return (
+            <Grid>
+                <Row style={{ marginBottom: '20px' }}>
+                    <Col md={12}>
+                        <h2>Provisioning Service Dashboard</h2>
+                    </Col>
+                </Row>
+                <Row style={{ marginBottom: '50px' }}>
+                    <Col md={12}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div>
+                                <h3>Security Recommendations</h3>
+                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                    <img src={SearchIcon} width={20} style={{ marginRight: '10px' }} />
+                                    <div>
+                                        <h4>All security checking passed</h4>
+                                        <p>Look forward to other security suggestions....</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style={{ marginRight: '10%' }}>
+                                <Button>
+                                    <img src={SearchIcon} width={20} />
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row md={5}></Row>
+                <Row>
+                    <Col md={12}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div>
+                                <h3>Provisioning Service Resources</h3>
+                            </div>
+                            <div style={{ marginRight: '10%' }}>
+                                <Button>
+                                    <img src={SearchIcon} width={20} />
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <hr style={{ borderWidth: '2px', color: '#000000', marginTop: '10px', marginBottom: '10px' }} />
+                <Row style={{ marginBottom: '20px' }}>
+                    <Col md={3} style={{ borderRight: "2px solid #5D6D7E" }}>
+                        <h4>User Groups</h4>
+                        <p style={{ fontSize: '50px', color: '#2E86C1' }}>14</p>
+                    </Col>
+                    <Col md={3} style={{ borderRight: "2px solid #5D6D7E" }}>
+                        <h4>Users</h4>
+                        <p style={{ fontSize: '50px', color: '#2E86C1' }}>82</p>
+                    </Col>
+                    <Col md={3} style={{ borderRight: "2px solid #5D6D7E" }}>
+                        <h4>Roles</h4>
+                        <p style={{ fontSize: '50px', color: '#2E86C1' }}>250</p>
+                    </Col>
+                    <Col md={3}>
+                        <h4>Policies</h4>
+                        <p style={{ fontSize: '50px', color: '#2E86C1' }}>107</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={12}>
+                        <div>
+                            <h3>What's new</h3>
+                            <h5>Updates for features in IAM </h5>
+                        </div>
+                    </Col>
+                </Row>
+                <hr style={{ borderWidth: '2px', color: '#000000', marginTop: '5px', marginBottom: '5px' }} />
+                <ul>
+                    <li><a href="https://www.example1.com" style={{ fontSize: '20px' }}>Example Link 1</a></li>
+                    <li><a href="https://www.example2.com" style={{ fontSize: '20px' }}>Example Link 2</a></li>
+                    <li><a href="https://www.example3.com" style={{ fontSize: '20px' }}>Example Link 3</a></li>
+                </ul>
+            </Grid>
+        );
+    }
 });
 
 export default Dashboard;
