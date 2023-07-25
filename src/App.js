@@ -1,8 +1,9 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 import { Grid, Row, Col, Badge, Button, Glyphicon, Label } from 'react-bootstrap';
 
-class Dashboard extends React.Component {
-  render() {
+var Dashboard = createReactClass({
+  render: function() {
     return (
       <div className="dashboard">
         <Grid>
@@ -47,6 +48,6 @@ class Dashboard extends React.Component {
       </div>
     );
   }
-}
+});
 
 export default Dashboard;
