@@ -1,56 +1,52 @@
-var React = require('react');
-var createReactClass = require('create-react-class');
-var { Grid, Row, Col, Button, Jumbotron } = require('react-bootstrap');
+import React from 'react';
+import { Grid, Row, Col, Badge, Button, Glyphicon, Label } from 'react-bootstrap';
 
-var Dashboard = createReactClass({
-  render: function() {
+class Dashboard extends React.Component {
+  render() {
     return (
-      <Grid>
-        <Row>
-          <Col md={12}>
-            <h1>AWS Services</h1>
-            <input type="text" placeholder="Search services, features, marketplace products, and AWS documentation" />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <h2>Identity and Access Management Page</h2>
-            <h3>IAM Dashboard</h3>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <h4>Security Recommendations</h4>
-            <p>Here are some security recommendations...</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <h4>AWS Account</h4>
-            <h5>Access Management</h5>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={3}>
-            <h4>User Groups</h4>
-            <Button>Manage User Groups</Button>
-          </Col>
-          <Col md={3}>
-            <h4>Users</h4>
-            <Button>Manage Users</Button>
-          </Col>
-          <Col md={3}>
-            <h4>Roles</h4>
-            <Button>Manage Roles</Button>
-          </Col>
-          <Col md={3}>
-            <h4>Policies</h4>
-            <Button>Manage Policies</Button>
-          </Col>
-        </Row>
-      </Grid>
+      <div className="dashboard">
+        <Grid>
+          <Row className="awsui-util-action-stripe-large">
+            <Col xs={12}>
+              <h1 className="awsui-util-d-ib">IAM dashboard</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={9}>
+              <div className="panel">
+                <div className="panel-heading">
+                  <h2>Security recommendations <Badge>1</Badge></h2>
+                  <Button bsSize="small"><Glyphicon glyph="refresh" /></Button>
+                </div>
+                <div className="panel-body">
+                  <h4>Add MFA for root user</h4>
+                  <small>Add MFA for root user - Enable multi-factor authentication (MFA) for the root user to improve security for this account.</small>
+                  <Button bsSize="small">Add MFA</Button>
+                </div>
+                <div className="panel-body">
+                  <h4>Root user has no active access keys</h4>
+                  <small>Using access keys attached to an IAM user instead of the root user improves security.</small>
+                </div>
+              </div>
+            </Col>
+            <Col xs={12}>
+              <div className="panel">
+                <div className="panel-heading">
+                  <h2>IAM resources</h2>
+                  <Button bsSize="small"><Glyphicon glyph="refresh" /></Button>
+                </div>
+                <div className="panel-body">
+                  <Label>User groups: </Label> <a href="#/groups">0</a>
+                  <Label>Users: </Label> <a href="#/users">0</a>
+                  <Label>Roles: </Label> <a href="#/roles">0</a>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
-});
+}
 
-module.exports = Dashboard;
+export default Dashboard;
